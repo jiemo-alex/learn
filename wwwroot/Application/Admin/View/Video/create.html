@@ -1,0 +1,54 @@
+<extend name="Public/base"/>
+<block name="body">
+    <div class="main-title">
+        <h2>新增视频</h2>
+    </div>
+
+    <form action="#" method="post" id="video-form" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">标题<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="username" value="">
+            </div>
+        </div>
+        <div class="form-item">
+            <input type="file" name="file" id="upload-file" />
+        </div>
+
+        <input class="btn" type="submit" value="上 传" />
+    </form>
+
+    <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <script>
+        var elementUploadFile = document.getElementById('upload-file')
+        var elementVideoForm = document.getElementById('video-form')
+
+        var xhrOnProgress = function(fun) {
+            xhrOnProgress.onprogress = fun;
+            return function() {
+                var xhr = $.ajaxSettings.xhr();
+                if (typeof xhrOnProgress.onprogress !== 'function')
+                    return xhr;
+                if (xhrOnProgress.onprogress && xhr.upload) {
+                    xhr.upload.onprogress = xhrOnProgress.onprogress;
+                }
+                return xhr;
+            }
+        }
+
+        elementVideoForm.onsubmit = function(event) {
+            event.preventDefault();
+            var xhr = new XMLHttpRequest();
+            var formData = new FormData(elementVideoForm);
+            xhr.open('POST', "{:U('createSubmit')}");
+            xhr.onload = function(event) {
+                // console.log(event)
+            }
+            xhr.onprogress = function(event) {
+                // var percentComplete = (event.loaded / event.total) * 100;
+                console.log(event);
+            }
+            xhr.send(formData)
+        }
+    </script>
+</block>

@@ -1,0 +1,38 @@
+<extend name="Public/base"/>
+<block name="body">
+    <div class="cf">
+		<div class="fl">
+            <a class="btn" id="reget" href="#">重新获取</a>
+        </div>
+    </div>
+    <div class="data-table">
+        <table>
+            <thead>
+                <tr>
+                    <th class="">部门编号</th>
+                    <th class="">部门名称</th>
+                </tr>
+            </thead>
+            <tbody>
+                <volist name="departments" id="vo">
+                    <tr>
+                        <td>{$vo.departmentId}</td>
+                        <td>{$vo.name}</td>
+                    </tr>
+                </volist>
+            </tbody>
+        </table>
+    </div>
+<script>
+    var reget = document.getElementById('reget')
+    reget.onclick = function(event) {
+        event.preventDefault();
+        $.get("{:U('Video/refreshDepartment?method=resumeUser&id='.$vo['uid'])}", function(data) {
+            alert('刷新成功！');
+            if (1 === data.status && 0 !== data.number) {
+                window.location.reload(true);
+            }
+        });
+    }
+</script>
+</block>

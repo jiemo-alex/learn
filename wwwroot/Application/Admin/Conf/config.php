@@ -102,4 +102,13 @@ return array(
     'TMPL_ACTION_SUCCESS'   =>  MODULE_PATH.'View/Public/success.html', // 默认成功跳转对应的模板文件
     'TMPL_EXCEPTION_FILE'   =>  MODULE_PATH.'View/Public/exception.html',// 异常页面的模板文件
 
+
+    // 钉钉信息
+    'DING_TALT'    =>     [
+        'AgentId' => 647035564,
+        'corp_id' => 'ding401dd62104016fd535c2f4657eb6378f',
+        'app_key' => 'ding3qnfb2juvtqzs06s',
+        'app_secret' => 'soK2vKgkef-6-6drslngnP1pe9AKdyS5S0jK-kpNmAjkX4fJnRF1SlDL6Zbkvj_0'
+    ]
+
 );

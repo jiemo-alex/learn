@@ -1,0 +1,27 @@
+<extend name="Public/base"/>
+<block name="body">
+    <div class="cf">
+		<div class="fl">
+            <a class="btn" href="{:U('create')}">新 增</a>
+            <button class="btn ajax-post" url="{:U('changeStatus?method=forbidUser')}" target-form="ids">禁 用</button>
+            <button class="btn ajax-post confirm" url="{:U('changeStatus?method=deleteUser')}" target-form="ids">删 除</button>
+        </div>
+    </div>
+    <div class="data-table">
+        <table>
+            <thead>
+                <tr>
+                    <th class="">视频名称</th>
+                    <th class="">所属部门</th>
+                    <th class="">排序</th>
+                    <th class="">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <volist name="_list" id="vo">
+                    
+                </volist> -->
+            </tbody>
+        </table>
+    </div>
+</block>

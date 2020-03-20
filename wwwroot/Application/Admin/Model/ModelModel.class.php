@@ -74,7 +74,7 @@ class ModelModel extends Model{
      * 处理字段排序数据
      * @author huajie <banhuajie@163.com>
      */
-    protected function getFields($fields){
+    protected function getFields($fields = []){
     	return empty($fields) ? '' : json_encode($fields);
     }
 

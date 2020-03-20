@@ -58,7 +58,7 @@ function str2arr($str, $glue = ','){
  * @return string
  * @author 麦当苗儿 <zuojiazi@vip.qq.com>
  */
-function arr2str($arr, $glue = ','){
+function arr2str($arr = [], $glue = ','){
     return implode($glue, $arr);
 }
 

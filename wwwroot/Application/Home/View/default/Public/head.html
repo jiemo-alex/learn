@@ -18,4 +18,20 @@
 <script type="text/javascript" src="__STATIC__/bootstrap/js/bootstrap.min.js"></script>
 <!--<![endif]-->
 <!-- 页面header钩子，一般用于加载插件CSS文件和代码 -->
+<script src="https://g.alicdn.com/dingding/dingtalk-jsapi/2.7.13/dingtalk.open.js"></script>
+
+<!-- <script>
+var corpId = 'ding401dd62104016fd535c2f4657eb6378f';
+dd.ready(function() {
+    // dd.ready参数为回调函数，在环境准备就绪时触发，jsapi的调用需要保证在该回调函数触发后调用，否则无效。
+    dd.runtime.permission.requestAuthCode({
+        corpId: corpId,
+        onSuccess: function(result) {
+            var authCode = result.code;
+        },
+        onFail : function(err) {}
+  
+    });
+});
+</script> -->
 {:hook('pageHeader')}

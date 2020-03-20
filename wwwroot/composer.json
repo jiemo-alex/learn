@@ -1,0 +1,6 @@
+{
+    "minimum-stability": "stable",
+    "require": {
+        "mingyoung/dingtalk": "^2.3"
+    }
+}

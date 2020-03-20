@@ -1,4 +1,4 @@
-FROM php:fpm-alpine
+FROM php:5.6-fpm-alpine
 
 RUN set -ex \
     && sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
